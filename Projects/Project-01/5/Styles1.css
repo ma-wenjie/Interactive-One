@@ -1,0 +1,165 @@
+.background{
+  width: 1700px;
+  height: 1000px;
+    background:Powderblue;
+    z-index: 1000;
+}
+.wrapper {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  margin: 40px auto;
+  
+
+}
+
+.wrapper, .wrapper * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.wrapper .pie {
+
+  width: 200%;
+  height: 400%;
+  transform-origin: 100% 50%;
+  position: absolute;
+  background: transparent;
+  border: 10px solid Powderblue;
+}
+
+.wrapper .spinner {
+
+  color: black;
+  border-radius: 200% 0 0 200% / 100% 0 0 100%;
+  z-index: 10;
+  border-right: none;
+  -webkit-animation: rota 10s linear infinite;
+}
+
+.wrapper:hover .spinner,
+.wrapper:hover .filler,
+.wrapper:hover .mask {
+  animation-play-state: running;
+}
+
+.wrapper .filler {
+  border-radius: 0 200% 200% 0 / 0 100% 100% 0;
+  left: 100%;
+  opacity: 0;
+  -webkit-animation: opa 8s steps(1, end) infinite reverse;
+  border-left: transparent;
+}
+
+.wrapper .mask {
+  font-size: 20px;
+  color: white;
+  width: 300px;
+  height: 300px;
+  text-align: center;
+  
+  padding-left: 250px;
+  width: 500px;
+  height: 500px;
+  position: relative;
+  background: inherit;
+  opacity: 1;
+  
+}
+
+@-webkit-keyframes rota {
+  0% {transform: rotate(0deg);border-color:white;}
+  100% {transform: rotate(360deg);z-index:0;}
+}
+@-webkit-keyframes opa {
+  0% {opacity: 1;}
+  50%, 100% {opacity: 0;}
+}
+
+::-webkit-scrollbar { 
+       display: none; 
+    }
+
+
+
+    .background1{
+  width: 1700px;
+  height: 1000px;
+    background:Powderblue;
+    z-index: 1000;
+}
+.wrapper1 {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  margin: 40px auto;
+  
+
+}
+
+.wrapper1, .wrapper1 * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.wrapper1 .pie1 {
+
+  width: 200%;
+  height: 400%;
+  transform-origin: 100% 50%;
+  position: fixed;
+  background: transparent;
+  border: 10px solid Powderblue;
+}
+
+.wrapper1.spinner1 {
+
+  color: black;
+  border-radius: 200% 0 0 200% / 100% 0 0 100%;
+  z-index: 10;
+  border-right: none;
+  -webkit-animation: rota 10s linear infinite;
+}
+
+.wrapper1:hover .spinner1,
+.wrapper1:hover .filler1,
+.wrapper1:hover .mask1 {
+  animation-play-state: running;
+}
+
+.wrapper .filler1 {
+  border-radius: 0 200% 200% 0 / 0 100% 100% 0;
+  left: 100%;
+  opacity: 0;
+  -webkit-animation: opa 8s steps(1, end) infinite reverse;
+  border-left: transparent;
+}
+
+.wrapper .mask1 {
+  font-size: 20px;
+  color: white;
+  width: 300px;
+  height: 300px;
+  text-align: center;
+  
+  padding-left: 250px;
+  width: 500px;
+  height: 500px;
+  position: relative;
+  background: inherit;
+  opacity: 1;
+  
+}
+
+@-webkit-keyframes rota {
+  0% {transform: rotate(0deg);border-color:white;}
+  100% {transform: rotate(360deg);z-index:0;}
+}
+@-webkit-keyframes opa {
+  0% {opacity: 1;}
+  50%, 100% {opacity: 0;}
+}
+
+::-webkit-scrollbar { 
+       display: none; 
+    }
