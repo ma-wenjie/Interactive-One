@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.css">
+  		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  		<script src="jquery-ui-1.12.1/jquery-ui.js"></script>
+
+  		<style type="text/css">
+  			/*draggable*/
+  				#draggable{
+  					width: 200px;
+  					height: 200px;
+  					padding: 2px;
+  					background-color: white;
+
+  				}
+
+  				#droppable{
+  					width:200px;
+  					height: 200px;
+  					padding: 2px;
+  					background-color: white;
+  					position: absolute;
+  				}
+
+  				#draggable:hover{
+  					cursor: cell;
+  				}
+
+  				.rotatepencil{
+  					transform: rotate(45deg);
+  				}
+
+
+  		</style>
+
+
+  		<script type="text/javascript">
+  			
+  			$(function(){
+  				$('#draggable').draggable();
+  				$('#droppable').droppable({
+  					drop: function(event, ui){
+  						$(ui.draggable)
+  						.addClass("rotatepencil");
+  					}
+  				});
+
+  			})
+
+  			
+  		</script>
+
+  </head>
+
+  <body>
+  	
+  	<div id= "draggable" class="ui-widget-content">
+  	<p> <img src="20028.jpg"> </p>
+  	</div>
+
+  	<div id="droppable" class="ui-widget-content">
+  	<p> #1 </p>
+  	</div>
+
+  	<div id="background" class="ui-widget-content">
+  	<p> <img src="Table.jpg"> </p>
+
+  </body>
+  </html>
