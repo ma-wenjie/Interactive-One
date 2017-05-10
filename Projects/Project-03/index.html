@@ -1,0 +1,248 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.css">
+  		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  		<script src="jquery-ui-1.12.1/jquery-ui.js"></script>
+
+  		<style type="text/css">
+
+    body{
+      margin:0;
+        background-image: url(background.png);
+        width: 100%;
+         
+        height: 100%;
+          background-size: cover;
+          border:none;
+    }
+  			
+
+  			/*draggable*/
+  				#pencil{
+            width: 200px;
+            height: 200px;
+            padding: 2px;
+            position: absolute;
+           
+            background-color: transparent;
+            border: none;
+
+          }
+
+          #earser{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            padding: 2px;
+            background-color: transparent;
+            border: none;
+           
+            
+
+          }
+
+          #notepad{
+            width: 200px;
+            height: 200px;
+            padding: 2px;
+            background-color: transparent;
+            border: none;
+            position: absolute;
+          
+
+          }
+
+          #macbook{
+            width: 400px;
+            height: auto;
+            padding: 2px;
+            background-color: transparent;
+            border: none;
+            position: absolute;
+           
+
+          }
+
+  				
+  			/*dropppable*/
+  				#droppable{
+  					width:200px;
+  					height: 200px;
+  					padding: 2px;
+  					background-color: transparent;
+  					position: absolute;
+  					border: none;
+            font-family: avenir;
+            font-size: 3em;
+  				}
+
+  				#pencil:hover{
+            cursor: cell;
+
+          }
+
+          #notpad:hover{
+            cursor: cell;
+
+          }
+
+          #earser:hover{
+            cursor: cell;
+
+          }
+
+          #macbook:hover{
+            cursor: cell;
+
+          }
+
+  				.rotatepencil{
+            transition: 0.5s;
+            transform: rotate(45deg);
+            stroke:none;  
+            animation:movepencil 1s;
+            animation-fill-mode: forwards;
+          }
+
+@keyframes movepencil{
+            from{top: 0;left: 0;}
+            to{top: 100px;
+              left: 100px;}
+          }
+
+           .rotatenotepad{
+          
+            transform: rotate(-75deg);
+            stroke:none;     
+            animation:movenotepad 1s;
+            animation-fill-mode: forwards;
+          
+          }
+     @keyframes movenotepad{
+            from{top: 0;left: 0;}
+            to{top: 300px;
+              left: 200px;}
+          }
+
+           .rotateearser{
+            transition: 0.5s;
+            transform: rotate(40deg);
+            stroke:none;   
+            animation:moveearser 1s;
+            animation-fill-mode: forwards;
+          }
+           @keyframes moveearser{
+            from{top: 0; left: 0;}
+            to{top: 100px; right: 900px;}
+          }
+
+
+          .rotatemacbook{
+            transition: 0.5s;
+            transform: rotate(0deg);
+            stroke:none;   
+            animation:movemacbook 1s;
+            animation-fill-mode: forwards;
+          }
+
+          
+         
+          @keyframes movemacbook{
+            from{top: 0; left: 0; }
+            to{top: 200px; left: 700px;}
+          }
+
+     
+
+  				
+
+  				
+
+  		</style>
+
+
+  		<script type="text/javascript">
+  			
+  			$(function(){
+  				$('#pencil').draggable();
+          $('#droppable').droppable({
+            drop: function(event, ui){
+              $(ui.pencil)
+              .addClass("rotatepencil"); 
+      
+            }
+          });
+           })
+
+        $(function(){
+          $('#notepad').draggable();
+          $('#droppable').droppable({
+            drop: function(event, ui){
+              $(ui.notepad)
+              .addClass("rotatenotepad");
+   
+            }
+          });
+           })
+
+        $(function(){
+         $('#earser').draggable();
+          $('#droppable').droppable({
+            drop: function(event, ui){
+              $(ui.earser)
+              .addClass("rotateearser"); 
+            
+            }
+          });
+           })
+   
+        $(function(){
+          $('#macbook').draggable();
+          $('#droppable').droppable({
+            drop: function(event, ui){
+              $(ui.draggable)
+              .addClass("rotatemacbook");
+             
+            }
+          });
+        })
+
+  			
+
+  			
+  		</script>
+
+  </head>
+
+  <body>
+
+  	
+ 
+  	<div id="droppable" class="ui-widget-content">
+  	Organize 
+  	</div>
+
+  
+     <div id= "macbook" class="ui-widget-content">
+    <img src="macbook.png" width="100%" id="macbook"> 
+    </div>
+
+    <div id= "notepad" class="ui-widget-content">
+    <img src="notepad.png" width="100%" id="notepad"> 
+    </div>
+  <div id= "pencil" >
+    <img src="20028.png" id="pencil" class="ui-widget-content"> 
+    </div>
+
+    <div id= "earser" class="ui-widget-content">
+    <img src="earser.png" width="100% id="earser"> 
+    </div>
+
+  
+
+
+
+  </body>
+  </html>
