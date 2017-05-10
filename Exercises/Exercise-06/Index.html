@@ -7,29 +7,62 @@
   		<script src="jquery-ui-1.12.1/jquery-ui.js"></script>
 
   		<style type="text/css">
+
+
+  			.canvas{
+  				background-size: windowHeight, windowWidth;
+  				border:none;
+  			}
+
   			/*draggable*/
   				#draggable{
   					width: 200px;
   					height: 200px;
   					padding: 2px;
   					background-color: white;
+  					border: none;
 
   				}
 
+  				
+  			/*dropppable*/
   				#droppable{
   					width:200px;
   					height: 200px;
   					padding: 2px;
   					background-color: white;
   					position: absolute;
+  					border: none;
   				}
 
   				#draggable:hover{
   					cursor: cell;
+
   				}
 
   				.rotatepencil{
   					transform: rotate(45deg);
+  					stroke:none;
+  				}
+
+  				.spawn{
+  					object-position: random;
+  				}
+  				.destroy{
+  					background-color: #000000;
+  					width: 150px;
+  					height: 150px;
+  					padding-left: 0.5em;
+  					color: #ffffff;
+  				}
+
+  				/*recycle can*/
+  				#recycle{
+  					position: relative;
+  					size: 30%;
+  					left: 700px;
+  					top: 200px;
+  					border: none;
   				}
 
 
@@ -44,6 +77,9 @@
   					drop: function(event, ui){
   						$(ui.draggable)
   						.addClass("rotatepencil");
+  						(destroy)
+  						$(event.draggable)
+  						
   					}
   				});
 
@@ -55,17 +91,25 @@
   </head>
 
   <body>
-  	
+
+  	<div id="canvas" class="ui-widget-content">
+  	<p></p>
+  	</div>
+
+  	<div id="droppable" class="ui-widget-content">
+  	<p> Organize </p>
+  	</div>
+
   	<div id= "draggable" class="ui-widget-content">
   	<p> <img src="20028.jpg"> </p>
   	</div>
 
-  	<div id="droppable" class="ui-widget-content">
-  	<p> #1 </p>
+  	<div id="recycle" class="ui-widget-content">
+  	<p> <img src="recycle.jpg" width="200px" height="200px"></p>
   	</div>
+  
 
-  	<div id="background" class="ui-widget-content">
-  	<p> <img src="Table.jpg"> </p>
+
 
   </body>
   </html>
