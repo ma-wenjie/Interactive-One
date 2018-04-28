@@ -16,7 +16,7 @@ function toggleSong() {
 }
 
 function preload() {
-  song = loadSound('starboy.mp3');
+  song = loadSound('Jauz.mp3');
 }
 
 function setup() {
